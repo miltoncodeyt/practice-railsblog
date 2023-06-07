@@ -1,0 +1,15 @@
+<header class="flex items-center h-12 bg-orange-500 shadow-md">
+  <div class="flex justify-between px-2 w-full lg:max-w-screen-xl lg:m-auto lg:px-0">
+    <%= link_to "RailsBlog", root_path, class:"text-xl text-yellow-50 font-bold pointer" %>
+
+    <nav class="flex gap-4 items-center">
+      <% if user_signed_in? %>
+        <%= link_to "Profile", edit_user_registration_path, class:"bg-orange-600 py-1 px-4 rounded text-white" %>
+        <%= link_to "Create a new article", new_article_path, class:"bg-orange-600 py-1 px-4 rounded text-white" %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"bg-black py-1 px-4 rounded text-white" %>
+      <% else %>
+        <%= button_to "Sign in", new_user_session_path, class:"bg-orange-600 py-1 px-4 rounded text-white" %>
+      <% end %>
+    </nav>
+  </div>
+</header>

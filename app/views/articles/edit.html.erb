@@ -1,0 +1,17 @@
+<section class="pt-4 pb-6">
+  <h1 class="mb-2 text-3xl font-semibold text-gray-600">
+    Update Article
+  </h1>
+
+  <%= render partial: "partials/form", locals: {article: @article} %>
+
+  <%= 
+    button_to "Delete",
+    @article, 
+    method: :delete,
+    data: {turbo_confirm: "Are you sure?"},
+    class:"bg-red-600 py-1 px-4 rounded text-white my-4"
+  %>
+
+  <%= link_to "Back to articles", root_path, class:"bg-orange-600 py-1 px-4 rounded text-white" %>
+</section>
